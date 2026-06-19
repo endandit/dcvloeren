@@ -1,0 +1,14 @@
+"use client";
+
+export function AkoestiekRow() {
+  return (
+    <div className="h-[230px] relative shrink-0 w-full" data-name="row/2">
+      <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
+        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[41.6px] pb-0 pt-[9px] px-[48px] relative size-full text-[26px]">
+          <p className="relative shrink-0 text-[#141311] w-full">Akoestiek</p>
+          <p className="basis-0 grow min-h-px min-w-px relative shrink-0 text-[#817b6e] w-full">Verbeter ruimteakoestiek met geluidsabsorberende wanpanelen in diverse decoratieve stijlen.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
