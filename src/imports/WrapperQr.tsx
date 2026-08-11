@@ -29,9 +29,9 @@ function HeadingScan() {
   return (
     <div className="content-stretch flex gap-[24px] h-[45px] items-center overflow-clip px-[24px] py-0 relative shrink-0 w-[440px]" data-name="heading/scan">
       <IconQr />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">
         <span>{`Scan en voeg `}</span>
-        <span className="font-['Oswald:Regular',sans-serif] font-normal">dc</span>
+        <span className="font-['Oswald',sans-serif] font-normal">dc</span>
         <span>{` toe als contact`}</span>
       </p>
     </div>

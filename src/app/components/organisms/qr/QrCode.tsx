@@ -58,9 +58,9 @@ END:VCARD`;
       data-name="wrapper/mobile"
     >
       <LogoDcIgnore />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">
         <span>{`Voeg `}</span>
-        <span className="font-['Oswald:Regular',sans-serif] font-normal">DC</span>
+        <span className="font-['Oswald',sans-serif] font-normal">DC</span>
         <span>{` toe als contact`}</span>
       </p>
     </div>

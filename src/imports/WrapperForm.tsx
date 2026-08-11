@@ -30,7 +30,7 @@ function HeadingQuote() {
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[24px] items-center px-[24px] py-0 relative size-full">
           <IconScroll />
-          <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">Vraag vrijblijvend een offerte aan</p>
+          <p className="basis-0 font-['Oswald',sans-serif] font-light grow leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">Vraag vrijblijvend een offerte aan</p>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ function WrapperNaam() {
   return (
     <div className="basis-0 content-stretch flex gap-[24px] grow h-[45px] items-center min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/naam">
       <IconUser />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Naam</p>
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Naam</p>
     </div>
   );
 }
@@ -93,7 +93,7 @@ function WrapperMail() {
   return (
     <div className="basis-0 content-stretch flex gap-[24px] grow h-[45px] items-center min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/mail">
       <IconMail />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#f0f0f0] text-[26px]">E-mail</p>
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#f0f0f0] text-[26px]">E-mail</p>
     </div>
   );
 }
@@ -126,7 +126,7 @@ function HeadingSelect() {
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[24px] items-center px-[24px] py-0 relative size-full">
           <IconSelect />
-          <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">Selecteer benodigdheden</p>
+          <p className="basis-0 font-['Oswald',sans-serif] font-light grow leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#d3bb51] text-[18px] uppercase">Selecteer benodigdheden</p>
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@ function CheckedParket() {
 function WrapperParket() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/parket">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#141311] text-[18px] top-0 uppercase w-[115px]">parket</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#141311] text-[18px] top-0 uppercase w-[115px]">parket</p>
       <CheckedParket />
     </div>
   );
@@ -183,7 +183,7 @@ function HoverLaminaat() {
 function WrapperLaminaat() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/laminaat">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#141311] text-[18px] top-0 uppercase w-[115px]">Laminaat</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#141311] text-[18px] top-0 uppercase w-[115px]">Laminaat</p>
       <HoverLaminaat />
     </div>
   );
@@ -213,7 +213,7 @@ function DefaultPvc() {
 function WrapperPvc() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/PVC">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">PVC</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">PVC</p>
       <DefaultPvc />
     </div>
   );
@@ -232,7 +232,7 @@ function DefaultMicrocement() {
 function WrapperMicrocement() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/microcement">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Microcement</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Microcement</p>
       <DefaultMicrocement />
     </div>
   );
@@ -262,7 +262,7 @@ function DefaultTraptreden() {
 function WrapperTraptreden() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/traptreden">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Traptreden</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Traptreden</p>
       <DefaultTraptreden />
     </div>
   );
@@ -283,7 +283,7 @@ function DefaultRenovatie() {
 function WrapperRenovatie() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/renovatie">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Renovatie</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Renovatie</p>
       <DefaultRenovatie />
     </div>
   );
@@ -315,7 +315,7 @@ function DefaultAkoestiek() {
 function WrapperAkoestiek() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/akoestiek">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Akoestiek</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Akoestiek</p>
       <DefaultAkoestiek />
     </div>
   );
@@ -336,7 +336,7 @@ function DefaultInterieur() {
 function WrapperInterieur() {
   return (
     <div className="basis-0 grow h-[45px] min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/interieur">
-      <p className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Interieur</p>
+      <p className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[#d3bb51] text-[18px] top-0 uppercase w-[115px]">Interieur</p>
       <DefaultInterieur />
     </div>
   );
@@ -382,7 +382,7 @@ function WrapperSend() {
   return (
     <div className="basis-0 content-stretch flex gap-[24px] grow h-[45px] items-center min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/send">
       <IconSend />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Verstuur</p>
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Verstuur</p>
     </div>
   );
 }

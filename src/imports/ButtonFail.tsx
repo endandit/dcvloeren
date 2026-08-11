@@ -18,7 +18,7 @@ function WrapperSend() {
   return (
     <div className="basis-0 content-stretch flex gap-[24px] grow h-[45px] items-center min-h-px min-w-px overflow-clip relative shrink-0" data-name="wrapper/send">
       <IconSelect />
-      <p className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Niet verstuurd</p>
+      <p className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[#141311] text-[26px]">Niet verstuurd</p>
     </div>
   );
 }

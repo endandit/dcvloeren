@@ -27,7 +27,7 @@ function P() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/1">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] pb-0 pt-[24px] px-[24px] relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] pb-0 pt-[24px] px-[24px] relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">Hout</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Parket of laminaat</p>
         </div>
@@ -73,7 +73,7 @@ function P1() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/2">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">PVC</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Duurzaam en slijtvast</p>
         </div>
@@ -114,7 +114,7 @@ function P2() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/3">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">Microcement</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Naadloze betonlook</p>
         </div>
@@ -157,7 +157,7 @@ function P3() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/4">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">Traptreden</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Hout of PVC</p>
         </div>
@@ -200,7 +200,7 @@ function P4() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/5">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] pb-[24px] pt-0 px-[24px] relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] pb-[24px] pt-0 px-[24px] relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">Renovatie</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Oude vloer als nieuw</p>
         </div>

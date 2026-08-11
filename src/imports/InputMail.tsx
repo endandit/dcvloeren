@@ -55,7 +55,7 @@ export default function InputMail({ value, onChange, shake = false }: InputMailP
               value={value}
               onChange={(e) => onChange(e.target.value)}
               placeholder="E-mail"
-              className="basis-0 font-['Oswald:Light',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[26px] bg-transparent border-none outline-none placeholder:text-[#F0F0F0]"
+              className="basis-0 font-['Oswald',sans-serif] font-light grow h-[45px] leading-[44.8px] min-h-px min-w-px relative shrink-0 text-[26px] bg-transparent border-none outline-none placeholder:text-[#F0F0F0]"
               style={{ color }}
             />
           </div>

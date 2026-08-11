@@ -103,7 +103,7 @@ function Row11() {
     <div className="relative shrink-0 w-full" data-name="row/1">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-start pb-[12px] pt-[24px] px-[36px] relative w-full">
-          <p className="font-['Oswald:Light',sans-serif] font-light leading-[42px] relative shrink-0 text-[#141311] text-[28px] w-full">Dennis Cornelissen is vloerspecialist met een passie voor interieur en binnenhuis-architectuur</p>
+          <p className="font-['Oswald',sans-serif] font-light leading-[42px] relative shrink-0 text-[#141311] text-[28px] w-full">Dennis Cornelissen is vloerspecialist met een passie voor interieur en binnenhuis-architectuur</p>
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@ function Row13() {
     <div className="relative shrink-0 w-full" data-name="row/3">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-start pb-[36px] pt-[12px] px-[36px] relative w-full">
-          <p className="font-['Oswald:ExtraLight',sans-serif] font-extralight leading-[42px] relative shrink-0 text-[#141311] text-[28px] w-full">{`Met jarenlange ervaring in het plaatsen en renoveren van houten vloeren en trappen, parket en PVC, wordt de vloer vakkundig geplaatst naar de hoogste kwaliteitseisen en in ieder gewenst patroon. Desgewenst adviseert DC vloeren & interieur over de perfecte harmonie tussen vloer, interieur en akoestiek in uw woning, winkel of bedrijfspand.`}</p>
+          <p className="font-['Oswald',sans-serif] font-extralight leading-[42px] relative shrink-0 text-[#141311] text-[28px] w-full">{`Met jarenlange ervaring in het plaatsen en renoveren van houten vloeren en trappen, parket en PVC, wordt de vloer vakkundig geplaatst naar de hoogste kwaliteitseisen en in ieder gewenst patroon. Desgewenst adviseert DC vloeren & interieur over de perfecte harmonie tussen vloer, interieur en akoestiek in uw woning, winkel of bedrijfspand.`}</p>
         </div>
       </div>
     </div>

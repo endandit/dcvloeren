@@ -24,7 +24,7 @@ export function CheckboxInterieur({ isSelected, onToggle }: CheckboxInterieurPro
       onMouseLeave={() => setIsHovered(false)}
     >
       <p 
-        className="absolute font-['Oswald:Light',sans-serif] font-light leading-[44.8px] left-[69px] text-[18px] top-0 uppercase w-[115px] transition-colors duration-200"
+        className="absolute font-['Oswald',sans-serif] font-light leading-[44.8px] left-[69px] text-[18px] top-0 uppercase w-[115px] transition-colors duration-200"
         style={{ color: textColor }}
       >
         Interieur

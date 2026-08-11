@@ -12,7 +12,7 @@ function FloorTextMicrocement() {
   return (
     <div className="basis-0 grow h-full min-h-px min-w-px relative shrink-0" data-name="p/3">
       <div className="flex flex-col justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col font-['Oswald:Light',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
+        <div className="content-stretch flex flex-col font-['Oswald',sans-serif] font-light items-start justify-center leading-[36.4px] px-[24px] py-0 relative size-full text-[26px]">
           <p className="relative shrink-0 text-[#141311] w-full">Microcement</p>
           <p className="relative shrink-0 text-[#817b6e] w-full">Naadloze betonlook</p>
         </div>
