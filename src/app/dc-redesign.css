@@ -1,0 +1,474 @@
+/* DC Vloeren redesign — ported from design-exploration/d-combined.html (chosen direction) +
+   shared.css. Oswald is already loaded globally via src/styles/fonts.css, so no @import here.
+   Image paths point at /images/dc-redesign/ in the Vite public/ folder. */
+
+:root {
+  --dc-gold: #d3bb51;
+  --dc-ink: #141311;
+  --dc-muted: #817b6e;
+  --dc-cream: #f7f5f0;
+  --dc-white: #ffffff;
+}
+
+.dc-page {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: var(--dc-ink);
+  background: var(--dc-white);
+}
+
+.dc-page h1, .dc-page h2, .dc-page h3, .dc-page p { margin: 0; }
+
+.dc-page .eyebrow {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dc-gold);
+  font-weight: 500;
+}
+
+.dc-page .nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.dc-page .nav .logo-mark { height: 28px; width: auto; display: block; }
+
+.dc-page .nav .links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0; padding: 0;
+  /* Difference-blended against whatever scrolls underneath the fixed nav (dark hero keeps white
+     text white; white page sections flip it to near-black) so link text stays readable
+     everywhere. Scoped to .links, not .nav, so logo-mark — a .links sibling — is never part of
+     the blend and always renders its true gold (#D3BB51), per Dennis's 12 Aug feedback. */
+  mix-blend-mode: difference;
+  isolation: isolate;
+}
+
+.dc-page .nav .links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.dc-page section { position: relative; }
+
+.dc-page .section-pad {
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dc-page .floor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.dc-page .floor-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--dc-cream);
+}
+
+.dc-page .floor-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dc-page .floor-card .label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(20,19,17,0.85), transparent);
+  color: #fff;
+}
+
+.dc-page .floor-card .label h3 {
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dc-page .floor-card .label p {
+  font-size: 14px;
+  color: var(--dc-gold);
+  margin-top: 4px;
+}
+
+.dc-page .interieur-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.dc-page .interieur-split img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dc-page .interieur-row {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(20,19,17,0.1);
+}
+
+.dc-page .interieur-row h3 {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.dc-page .interieur-row p {
+  color: var(--dc-muted);
+  margin-top: 8px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.dc-page .cta {
+  background: var(--dc-cream);
+  text-align: center;
+}
+
+.dc-page .cta .section-pad { max-width: 560px; }
+
+.dc-page .cta h2 {
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.dc-page .cta form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dc-page .cta input, .dc-page .cta textarea {
+  border: none;
+  border-bottom: 2px solid rgba(20,19,17,0.2);
+  background: transparent;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 12px 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dc-page .cta textarea { resize: vertical; min-height: 90px; font-family: 'Oswald', sans-serif; }
+
+.dc-page .cta input:focus, .dc-page .cta textarea:focus { border-color: var(--dc-gold); }
+
+.dc-page .cta .topics-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dc-muted);
+  text-align: left;
+  margin-top: 4px;
+}
+
+.dc-page .cta .topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dc-page .cta .topic-chip {
+  border: 1px solid rgba(20,19,17,0.25);
+  background: transparent;
+  color: var(--dc-ink);
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.dc-page .cta .topic-chip:hover { border-color: var(--dc-gold); }
+
+.dc-page .cta .topic-chip.is-selected {
+  background: var(--dc-ink);
+  border-color: var(--dc-ink);
+  color: #fff;
+}
+
+.dc-page .cta button {
+  margin-top: 12px;
+  border: 2px solid var(--dc-ink);
+  background: var(--dc-ink);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.dc-page .cta button:hover { opacity: 0.85; }
+.dc-page .cta button:disabled { cursor: not-allowed; opacity: 0.6; }
+.dc-page .cta button.is-success { background: var(--dc-gold); border-color: var(--dc-gold); color: var(--dc-ink); }
+.dc-page .cta button.is-error { background: #a33; border-color: #a33; }
+
+.dc-page .cta .vcard-btn {
+  margin-top: 40px;
+  background: transparent;
+  border: 2px solid var(--dc-ink);
+  color: var(--dc-ink);
+}
+.dc-page .cta .vcard-btn:hover { opacity: 1; background: var(--dc-ink); color: #fff; }
+
+.dc-page footer {
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--dc-muted);
+  text-transform: uppercase;
+}
+
+.dc-page footer a { color: var(--dc-muted); }
+
+@media (max-width: 900px) {
+  .dc-page .floor-grid { grid-template-columns: repeat(2, 1fr); }
+  .dc-page .interieur-split { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ── Hero (d-combined.html) ─────────────────────────────────────────── */
+
+.dc-page .hero-track {
+  height: 300vh;
+  position: relative;
+  view-timeline-name: --hero-scroll;
+  view-timeline-axis: block;
+}
+.dc-page .hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--dc-ink) url('/images/dc-redesign/hero-interieur.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* dims the revealed photo to match the planks' own filter:brightness(0.55) so the handoff
+   from "hidden behind planks" to "revealed underneath" doesn't jump in brightness. */
+.dc-page .hero-sticky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 19, 17, 0.45);
+}
+.dc-page .plank {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 34%;
+  background-size: cover;
+  background-position: center;
+  animation-timeline: --hero-scroll;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  /* Track sits at the very top of the document, so at real scroll=0 the `cover` timeline has
+     already consumed ~25% of its range (300vh/100vh) — the pin stays reachable only up to ~75%
+     before it releases. Planks sit assembled from scroll=0 through the range start (a short
+     static hold), exit across 28.75%-52.5%, then a deliberate ~90vh hold (52.5%-75%) gives
+     .sheet below room to rise up and cover a genuinely still hero for a real parallax feel. */
+  animation-range: cover 28.75% cover 52.5%;
+  filter: brightness(0.55);
+}
+.dc-page .plank--left   { left: 0;    background-image: url('/images/dc-redesign/hero-left.webp');   animation-name: dc-plank-out-left; }
+.dc-page .plank--center { left: 33%;  background-image: url('/images/dc-redesign/hero-center.webp'); animation-name: dc-plank-out-center; z-index: 1; }
+.dc-page .plank--right  { right: 0;   background-image: url('/images/dc-redesign/hero-right.webp');  animation-name: dc-plank-out-right; }
+
+@keyframes dc-plank-out-left   { from { transform: translateX(0); } to { transform: translateX(-115%); } }
+@keyframes dc-plank-out-center { from { transform: translateY(0); } to { transform: translateY(-115%); } }
+@keyframes dc-plank-out-right  { from { transform: translateX(0);  } to { transform: translateX(115%); } }
+
+.dc-page .hero-copy {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  animation-timeline: --hero-scroll;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-name: dc-copy-out;
+  animation-range: cover 27.5% cover 40%;
+}
+@keyframes dc-copy-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-16px); } }
+
+.dc-page .hero-copy .hero-logo { width: min(70vw, 560px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 40px rgba(0,0,0,0.5)); }
+
+/* Dennis's own photo, subtle: a dim, moody backdrop behind the about-section copy — same
+   "real photo, heavily dimmed" language already used for the hero reveal. Constrained to a
+   centered max-width band with a horizontal edge fade on desktop (full-bleed portrait photo on
+   a very wide, short section forced an ugly zoom-crop); full-bleed with no fade on mobile,
+   where that fade pressure doesn't exist and would just eat into an already-tight width. */
+.dc-page .about {
+  position: relative;
+  overflow: hidden;
+  background: var(--dc-ink);
+  color: #fff;
+}
+.dc-page .about .section-pad { max-width: 800px; text-align: center; position: relative; z-index: 1; }
+.dc-page .about h2 { font-size: 32px; font-weight: 300; line-height: 1.4; }
+.dc-page .about p { color: rgba(255,255,255,0.6); font-weight: 200; line-height: 1.7; margin-top: 24px; font-size: 18px; }
+.dc-page .about::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 900px);
+  background: url('/images/dc-redesign/dennis.webp') center 20% / cover no-repeat;
+  /* opacity 0.18 replicates the same effective visibility as an rgba(ink, 0.86) overlay sitting
+     on top of a full-opacity photo (photo showing through at ~14% strength) — kept close to
+     that validated subtlety, just nudged up slightly now that it's properly framed. */
+  opacity: 0.18;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+@supports not (animation-timeline: view()) {
+  .dc-page .hero-track { height: 100vh; }
+  .dc-page .plank { animation: none !important; transform: translateX(0) translateY(0) !important; }
+  .dc-page .hero-copy { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .dc-page .sheet { animation: none !important; transform: none !important; }
+}
+
+/* The sheet rise, genuinely overlapping: a flat negative margin pulls .sheet's normal-flow top
+   up by 90vh — exactly the width of the "hold" gap left in the .hero-track timeline above
+   (52.5%-75%, ~90vh of real scroll) — so the sheet starts entering the viewport from below
+   WHILE the hero-sticky is still pinned and static, not after it's already scrolled away.
+   Because .sheet has a higher z-index than the hero, this reads as content rising up and
+   covering a still image (real parallax) instead of two things scrolling past each other at
+   the same rate. Its own view() timeline (entry into the viewport, not the hero's
+   --hero-scroll) layers a small extra translateY on top of the margin-driven rise so the
+   arrival has a touch of ease rather than being purely 1:1 with scroll. */
+.dc-page .sheet {
+  position: relative;
+  z-index: 3;
+  margin-top: -90vh;
+  background: var(--dc-white);
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -30px 60px rgba(0,0,0,0.25);
+  view-timeline-name: --sheet-scroll;
+  view-timeline-axis: block;
+  animation-name: dc-sheet-in;
+  animation-timeline: --sheet-scroll;
+  animation-range: entry 0% entry 90%;
+  animation-fill-mode: both;
+}
+@keyframes dc-sheet-in { from { transform: translateY(10vh); } to { transform: translateY(0); } }
+
+.dc-page .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.dc-page .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-page .plank, .dc-page .hero-copy, .dc-page .sheet { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .dc-page .reveal { transition: none; opacity: 1; transform: none; }
+}
+
+/* Mobile: the plank-assembly/exit choreography needs real screen width to read as three
+   distinct images — at phone widths each plank is an unreadable sliver, and iOS Safari can't
+   run animation-timeline: view() at all regardless. Mobile gets the same static treatment as
+   the @supports fallback above: no plank mosaic, hero-sticky's own background photo shows
+   directly, logo is static. The parallax overlap trick on .sheet has no equivalent hold to
+   sync to here — reset to a plain, un-overlapped entrance. */
+@media (max-width: 900px) {
+  .dc-page .hero-track { height: 100vh; }
+  .dc-page .plank { display: none; }
+  .dc-page .hero-copy { animation: none; opacity: 1; transform: none; }
+  .dc-page .sheet { margin-top: 0; animation: none; transform: none; }
+  .dc-page .floor-card .label { padding: 16px; }
+  .dc-page .floor-card .label h3 {
+    font-size: clamp(13px, 4vw, 18px);
+    letter-spacing: 0.5px;
+    overflow-wrap: break-word;
+  }
+  .dc-page .about::before { width: 100%; mask-image: none; -webkit-mask-image: none; }
+}
+
+/* ── Mobile nav toggle ───────────────────────────────────────────────── */
+
+.dc-page .nav-toggle-input { display: none; }
+.dc-page .nav-toggle-btn { display: none; }
+
+@media (max-width: 900px) {
+  .dc-page .nav-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px; height: 28px;
+    cursor: pointer;
+    position: relative;
+    z-index: 102;
+  }
+  .dc-page .nav-toggle-btn span {
+    width: 100%; height: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .dc-page .nav-toggle-input:checked ~ .nav-toggle-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .dc-page .nav-toggle-input:checked ~ .nav-toggle-btn span:nth-child(2) { opacity: 0; }
+  .dc-page .nav-toggle-input:checked ~ .nav-toggle-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .dc-page .nav .links {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 101;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    background: rgba(20, 19, 17, 0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .dc-page .nav .links a { font-size: 22px; }
+  .dc-page .nav-toggle-input:checked ~ .links {
+    opacity: 1;
+    pointer-events: auto;
+    /* The full-screen near-black overlay panel would itself get difference-blended into a
+       near no-op (washed out) if it kept .links' own blend mode active while open. */
+    mix-blend-mode: normal;
+  }
+}

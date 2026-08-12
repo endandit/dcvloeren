@@ -6,6 +6,12 @@
     <title>DC Vloeren & Interieur</title>
     <meta name="description" content="DC Vloeren & Interieur — vloeren, parket, PVC, microcement, renovatie en interieur." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Without this, a hard refresh reopens at whatever scroll position you left it at
+      // (the browser's default scroll restoration) instead of replaying the hero from the top.
+      if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+      window.scrollTo(0, 0);
+    </script>
   </head>
   <body>
     <div id="root"></div>
