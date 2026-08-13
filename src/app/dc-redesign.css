@@ -8,6 +8,23 @@
   --dc-muted: #817b6e;
   --dc-cream: #f7f5f0;
   --dc-white: #ffffff;
+
+  /* Font-size tokens — edited by edd-dcvloeren's set_style admin tool. */
+  --dc-fs-eyebrow: 14px;
+  --dc-fs-nav-link: 13px;
+  --dc-fs-nav-link-mobile: 22px;
+  --dc-fs-card-title: 22px;
+  --dc-fs-card-desc: 14px;
+  --dc-fs-interieur-title: 24px;
+  --dc-fs-heading-lg: 36px;
+  --dc-fs-heading-md: 32px;
+  --dc-fs-heading-sm: 28px;
+  --dc-fs-form-input: 20px;
+  --dc-fs-topics-label: 13px;
+  --dc-fs-topic-chip: 14px;
+  --dc-fs-button: 16px;
+  --dc-fs-footer: 13px;
+  --dc-fs-about-body: 18px;
 }
 
 .dc-page {
@@ -19,8 +36,10 @@
 
 .dc-page h1, .dc-page h2, .dc-page h3, .dc-page p { margin: 0; }
 
+.dc-page .heading-lg { font-size: var(--dc-fs-heading-lg); font-weight: 300; margin-top: 12px; }
+
 .dc-page .eyebrow {
-  font-size: 14px;
+  font-size: var(--dc-fs-eyebrow);
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--dc-gold);
@@ -55,7 +74,7 @@
 .dc-page .nav .links a {
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--dc-fs-nav-link);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -100,14 +119,14 @@
 }
 
 .dc-page .floor-card .label h3 {
-  font-size: 22px;
+  font-size: var(--dc-fs-card-title);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .dc-page .floor-card .label p {
-  font-size: 14px;
+  font-size: var(--dc-fs-card-desc);
   color: var(--dc-gold);
   margin-top: 4px;
 }
@@ -133,7 +152,7 @@
 }
 
 .dc-page .interieur-row h3 {
-  font-size: 24px;
+  font-size: var(--dc-fs-interieur-title);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -153,7 +172,7 @@
 .dc-page .cta .section-pad { max-width: 560px; }
 
 .dc-page .cta h2 {
-  font-size: 28px;
+  font-size: var(--dc-fs-heading-sm);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -170,7 +189,7 @@
   border-bottom: 2px solid rgba(20,19,17,0.2);
   background: transparent;
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
+  font-size: var(--dc-fs-form-input);
   font-weight: 300;
   padding: 12px 4px;
   outline: none;
@@ -182,7 +201,7 @@
 .dc-page .cta input:focus, .dc-page .cta textarea:focus { border-color: var(--dc-gold); }
 
 .dc-page .cta .topics-label {
-  font-size: 13px;
+  font-size: var(--dc-fs-topics-label);
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--dc-muted);
@@ -201,7 +220,7 @@
   background: transparent;
   color: var(--dc-ink);
   font-family: 'Oswald', sans-serif;
-  font-size: 14px;
+  font-size: var(--dc-fs-topic-chip);
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 10px 16px;
@@ -224,7 +243,7 @@
   background: var(--dc-ink);
   color: #fff;
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: var(--dc-fs-button);
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 16px;
@@ -250,7 +269,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 13px;
+  font-size: var(--dc-fs-footer);
   letter-spacing: 1px;
   color: var(--dc-muted);
   text-transform: uppercase;
@@ -342,8 +361,8 @@
   color: #fff;
 }
 .dc-page .about .section-pad { max-width: 800px; text-align: center; position: relative; z-index: 1; }
-.dc-page .about h2 { font-size: 32px; font-weight: 300; line-height: 1.4; }
-.dc-page .about p { color: rgba(255,255,255,0.6); font-weight: 200; line-height: 1.7; margin-top: 24px; font-size: 18px; }
+.dc-page .about h2 { font-size: var(--dc-fs-heading-md); font-weight: 300; line-height: 1.4; }
+.dc-page .about p { color: rgba(255,255,255,0.6); font-weight: 200; line-height: 1.7; margin-top: 24px; font-size: var(--dc-fs-about-body); }
 .dc-page .about::before {
   content: '';
   position: absolute;
@@ -463,7 +482,7 @@
     pointer-events: none;
     transition: opacity 0.25s ease;
   }
-  .dc-page .nav .links a { font-size: 22px; }
+  .dc-page .nav .links a { font-size: var(--dc-fs-nav-link-mobile); }
   .dc-page .nav-toggle-input:checked ~ .links {
     opacity: 1;
     pointer-events: auto;

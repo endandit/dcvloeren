@@ -1,0 +1,53 @@
+{
+  "nav": { "vloeren": "Vloeren", "interieur": "Interieur", "contact": "Contact" },
+  "vloerenSection": { "eyebrow": "Onze specialisaties", "heading": "Vloeren op maat" },
+  "floorCards": [
+    { "id": "parket", "image": "card-parket.webp", "alt": "Parket vloer", "title": "Parket", "description": "Hout, parket of laminaat" },
+    { "id": "pvc", "image": "card-pvc.webp", "alt": "PVC vloer", "title": "PVC", "description": "Duurzaam en slijtvast" },
+    { "id": "microcement", "image": "card-microcement.webp", "alt": "Microcement", "title": "Microcement", "description": "Naadloze betonlook" },
+    { "id": "trappen", "image": "card-trappen.webp", "alt": "Traptreden", "title": "Traptreden", "description": "Hout of PVC" },
+    { "id": "renovatie", "image": "card-renovatie.jpg", "alt": "Renovatie", "title": "Renovatie", "description": "Oude vloer als nieuw" },
+    { "id": "akoestiek", "image": "card-akoestiek.webp", "alt": "Akoestiek wandpanelen", "title": "Akoestiek", "description": "Wandpanelen" }
+  ],
+  "interieurSection": {
+    "eyebrow": "Interieuradvies",
+    "heading": "Vloer en interieur in harmonie",
+    "rows": [
+      { "title": "Interieur", "body": "Ons team voorziet desgewenst van interieur-advies en selectie voor de perfecte harmonie tussen vloer en interieur." },
+      { "title": "Akoestiek", "body": "Verbeter ruimteakoestiek met geluidsabsorberende wandpanelen in diverse decoratieve stijlen." }
+    ]
+  },
+  "about": {
+    "heading": "Dennis Cornelissen is vloerspecialist met een passie voor interieur en binnenhuis-architectuur",
+    "body": "Met jarenlange ervaring in het plaatsen en renoveren van houten vloeren en trappen, parket en PVC, wordt de vloer vakkundig geplaatst naar de hoogste kwaliteitseisen en in ieder gewenst patroon. Desgewenst adviseert DC vloeren & interieur over de perfecte harmonie tussen vloer, interieur en akoestiek in uw woning, winkel of bedrijfspand."
+  },
+  "contact": {
+    "eyebrow": "Offerte",
+    "heading": "Vraag vrijblijvend een offerte aan",
+    "namePlaceholder": "Naam",
+    "emailPlaceholder": "E-mail",
+    "topicsLabel": "Selecteer benodigdheden",
+    "topics": ["parket", "laminaat", "pvc", "microcement", "traptreden", "renovatie", "akoestiek", "interieur"],
+    "descriptionPlaceholder": "Waar kunnen we u mee helpen? (bijv. type vloer, oppervlakte, gewenste periode)",
+    "submitLabel": "Verstuur",
+    "submitLabelSuccess": "Verstuurd!",
+    "submitLabelError": "Mislukt, probeer opnieuw",
+    "vcardButtonLabel": "Voeg DC toe als contact"
+  },
+  "vcard": {
+    "fullName": "Dennis Cornelissen",
+    "lastName": "Cornelissen",
+    "firstName": "Dennis",
+    "org": "DC Vloeren",
+    "tel": "+31631232174",
+    "email": "info@dcvloeren.nl",
+    "url": "https://dcvloeren.nl",
+    "instagram": "https://instagram.com/dcvloeren"
+  },
+  "footer": {
+    "copyright": "© 2026 DC vloeren en interieur",
+    "builtByText": "gebouwd door",
+    "builtByLinkLabel": "Edd van EnDanDit",
+    "builtByLinkHref": "https://endandit.nl"
+  }
+}

@@ -1,37 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import "../dc-redesign.css";
+import content from "../content.json";
 
 const IMG = "/images/dc-redesign";
 
-const TOPICS = [
-  "parket",
-  "laminaat",
-  "pvc",
-  "microcement",
-  "traptreden",
-  "renovatie",
-  "akoestiek",
-  "interieur",
-] as const;
-type Topic = (typeof TOPICS)[number];
-
-// Real Dennis/DC Vloeren contact details — carried over from the old QrCode.tsx vCard feature.
-// That version split desktop (scannable QR) vs mobile (direct download button); a QR only earns
-// its keep as a separate-device flow, which doesn't apply here, so this is one button that
-// downloads the same vCard on click regardless of device.
-const VCARD = `BEGIN:VCARD
+function buildVCard() {
+  const v = content.vcard;
+  return `BEGIN:VCARD
 VERSION:3.0
-FN:Dennis Cornelissen
-N:Cornelissen;Dennis;;;
-ORG:DC Vloeren
-TEL:+31631232174
-EMAIL:info@dcvloeren.nl
-URL:https://dcvloeren.nl
-X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/dcvloeren
+FN:${v.fullName}
+N:${v.lastName};${v.firstName};;;
+ORG:${v.org}
+TEL:${v.tel}
+EMAIL:${v.email}
+URL:${v.url}
+X-SOCIALPROFILE;TYPE=instagram:${v.instagram}
 END:VCARD`;
+}
 
 function downloadVCard() {
-  const blob = new Blob([VCARD], { type: "text/vcard" });
+  const blob = new Blob([buildVCard()], { type: "text/vcard" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
@@ -48,7 +36,7 @@ export default function DcRedesignPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-  const [selectedTopics, setSelectedTopics] = useState<Set<Topic>>(new Set());
+  const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [buttonState, setButtonState] = useState<"default" | "success" | "error">("default");
 
@@ -77,7 +65,7 @@ export default function DcRedesignPage() {
     if (navToggleRef.current) navToggleRef.current.checked = false;
   };
 
-  const toggleTopic = (topic: Topic) => {
+  const toggleTopic = (topic: string) => {
     setSelectedTopics((prev) => {
       const next = new Set(prev);
       if (next.has(topic)) next.delete(topic);
@@ -130,7 +118,11 @@ export default function DcRedesignPage() {
   };
 
   const submitLabel =
-    buttonState === "success" ? "Verstuurd!" : buttonState === "error" ? "Mislukt, probeer opnieuw" : "Verstuur";
+    buttonState === "success"
+      ? content.contact.submitLabelSuccess
+      : buttonState === "error"
+        ? content.contact.submitLabelError
+        : content.contact.submitLabel;
 
   return (
     <div className="dc-page">
@@ -141,9 +133,9 @@ export default function DcRedesignPage() {
           <span></span><span></span><span></span>
         </label>
         <ul className="links">
-          <li><a href="#vloeren" onClick={closeMenu}>Vloeren</a></li>
-          <li><a href="#interieur" onClick={closeMenu}>Interieur</a></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+          <li><a href="#vloeren" onClick={closeMenu}>{content.nav.vloeren}</a></li>
+          <li><a href="#interieur" onClick={closeMenu}>{content.nav.interieur}</a></li>
+          <li><a href="#contact" onClick={closeMenu}>{content.nav.contact}</a></li>
         </ul>
       </nav>
 
@@ -160,103 +152,68 @@ export default function DcRedesignPage() {
 
       <div className="sheet">
         <section id="vloeren" className="section-pad">
-          <div className="eyebrow reveal">Onze specialisaties</div>
-          <h2 className="reveal" style={{ fontSize: 36, fontWeight: 300, marginTop: 12 }}>
-            Vloeren op maat
-          </h2>
+          <div className="eyebrow reveal">{content.vloerenSection.eyebrow}</div>
+          <h2 className="reveal heading-lg">{content.vloerenSection.heading}</h2>
           <div className="floor-grid">
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-parket.webp`} alt="Parket vloer" />
-              <div className="label"><h3>Parket</h3><p>Hout, parket of laminaat</p></div>
-            </div>
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-pvc.webp`} alt="PVC vloer" />
-              <div className="label"><h3>PVC</h3><p>Duurzaam en slijtvast</p></div>
-            </div>
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-microcement.webp`} alt="Microcement" />
-              <div className="label"><h3>Microcement</h3><p>Naadloze betonlook</p></div>
-            </div>
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-trappen.webp`} alt="Traptreden" />
-              <div className="label"><h3>Traptreden</h3><p>Hout of PVC</p></div>
-            </div>
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-renovatie.jpg`} alt="Renovatie" />
-              <div className="label"><h3>Renovatie</h3><p>Oude vloer als nieuw</p></div>
-            </div>
-            <div className="floor-card reveal">
-              <img src={`${IMG}/card-akoestiek.webp`} alt="Akoestiek wandpanelen" />
-              <div className="label"><h3>Akoestiek</h3><p>Wandpanelen</p></div>
-            </div>
+            {content.floorCards.map((card) => (
+              <div className="floor-card reveal" key={card.id}>
+                <img src={`${IMG}/${card.image}`} alt={card.alt} />
+                <div className="label"><h3>{card.title}</h3><p>{card.description}</p></div>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="interieur" className="section-pad">
-          <div className="eyebrow reveal">Interieuradvies</div>
-          <h2 className="reveal" style={{ fontSize: 36, fontWeight: 300, marginTop: 12 }}>
-            Vloer en interieur in harmonie
-          </h2>
+          <div className="eyebrow reveal">{content.interieurSection.eyebrow}</div>
+          <h2 className="reveal heading-lg">{content.interieurSection.heading}</h2>
           <div className="interieur-split">
             <img className="reveal" src={`${IMG}/interieur-split.webp`} alt="Interieur styling" />
             <div className="reveal">
-              <div className="interieur-row">
-                <h3>Interieur</h3>
-                <p>
-                  Ons team voorziet desgewenst van interieur-advies en selectie voor de perfecte
-                  harmonie tussen vloer en interieur.
-                </p>
-              </div>
-              <div className="interieur-row" style={{ borderBottom: "none" }}>
-                <h3>Akoestiek</h3>
-                <p>
-                  Verbeter ruimteakoestiek met geluidsabsorberende wandpanelen in diverse
-                  decoratieve stijlen.
-                </p>
-              </div>
+              {content.interieurSection.rows.map((row, i) => (
+                <div
+                  className="interieur-row"
+                  key={row.title}
+                  style={i === content.interieurSection.rows.length - 1 ? { borderBottom: "none" } : undefined}
+                >
+                  <h3>{row.title}</h3>
+                  <p>{row.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         <section className="about">
           <div className="section-pad">
-            <h2 className="reveal">
-              Dennis Cornelissen is vloerspecialist met een passie voor interieur en
-              binnenhuis-architectuur
-            </h2>
-            <p className="reveal">
-              Met jarenlange ervaring in het plaatsen en renoveren van houten vloeren en trappen,
-              parket en PVC, wordt de vloer vakkundig geplaatst naar de hoogste kwaliteitseisen en
-              in ieder gewenst patroon. Desgewenst adviseert DC vloeren &amp; interieur over de
-              perfecte harmonie tussen vloer, interieur en akoestiek in uw woning, winkel of
-              bedrijfspand.
-            </p>
+            <h2 className="reveal">{content.about.heading}</h2>
+            <p className="reveal">{content.about.body}</p>
           </div>
         </section>
 
         <section id="contact" className="cta">
           <div className="section-pad">
-            <div className="eyebrow reveal">Offerte</div>
-            <h2 className="reveal" style={{ marginTop: 12 }}>Vraag vrijblijvend een offerte aan</h2>
+            <div className="eyebrow reveal">{content.contact.eyebrow}</div>
+            <h2 className="reveal" style={{ marginTop: 12 }}>{content.contact.heading}</h2>
             <form className="reveal" onSubmit={handleSend}>
               <input
                 type="text"
-                placeholder="Naam"
+                placeholder={content.contact.namePlaceholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
               <input
                 type="email"
-                placeholder="E-mail"
+                placeholder={content.contact.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
 
-              <div className="topics-label">Selecteer benodigdheden</div>
+              <div className="topics-label">{content.contact.topicsLabel}</div>
               <div className="topics">
-                {TOPICS.map((topic) => (
+                {content.contact.topics.map((topic) => (
                   <button
                     key={topic}
                     type="button"
@@ -270,7 +227,7 @@ export default function DcRedesignPage() {
               </div>
 
               <textarea
-                placeholder="Waar kunnen we u mee helpen? (bijv. type vloer, oppervlakte, gewenste periode)"
+                placeholder={content.contact.descriptionPlaceholder}
                 rows={4}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -282,14 +239,14 @@ export default function DcRedesignPage() {
             </form>
 
             <button type="button" className="vcard-btn" onClick={downloadVCard}>
-              Voeg DC toe als contact
+              {content.contact.vcardButtonLabel}
             </button>
           </div>
         </section>
 
         <footer>
-          <span>© 2026 DC vloeren en interieur</span>
-          <span>gebouwd door <a href="https://endandit.nl">Edd van EnDanDit</a></span>
+          <span>{content.footer.copyright}</span>
+          <span>{content.footer.builtByText} <a href={content.footer.builtByLinkHref}>{content.footer.builtByLinkLabel}</a></span>
         </footer>
       </div>
     </div>
