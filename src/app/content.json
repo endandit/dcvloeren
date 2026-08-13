@@ -50,6 +50,13 @@
       "alt": "Akoestiek wandpanelen",
       "title": "Akoestiek",
       "description": "Wandpanelen"
+    },
+    {
+      "id": "kurk",
+      "image": "card-kurk.webp",
+      "alt": "Kurk",
+      "title": "Kurk",
+      "description": "Warm en duurzaam"
     }
   ],
   "interieurSection": {
